@@ -103,7 +103,7 @@ function updateLeaderboard(choixUtilisateurs, matchsJoues) {
         <tr>
           <th></th>
           <th></th>
-          <th>Score</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>

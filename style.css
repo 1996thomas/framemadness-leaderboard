@@ -62,7 +62,7 @@ main {
 .presentation__wrapper h2,
 .schedule__wrapper h2,
 .leaderBoard__wrapper h2 {
-  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-size: clamp(1.2rem, 4vw, 3rem);
 }
 
 .schedule__wrapper {
@@ -133,5 +133,15 @@ table :hover{
 @media screen and (max-width: 800px) {
   main {
     flex-direction: column;
+  }
+.username{
+  max-width: 200px;
+  overflow: hidden;
+  margin-left: 1rem;
+
+}
+  .avatar a {
+    height: 75px;
+    width: 75px;
   }
 }
