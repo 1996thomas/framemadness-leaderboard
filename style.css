@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+body {
+  font-family: "Chakra Petch", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primaryColor: #0087f7;
+  --secondaryColor: rgb(24, 24, 24);
+  --backgroundColor: #23282e;
+  --white: rgb(236, 236, 236);
+}
+main {
+  display: flex;
+  height: calc(100vh);
+}
+
+.leaderBoard__wrapper {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primaryColor);
+  color: var(--white);
+  align-items: center;
+  gap: 1vw;
+  min-height: 80vh;
+}
+
+.leaderboard {
+  border: 1px solid rgba(236, 236, 236, 0.4);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  color: var(--white);
+  width: 90%;
+  height: 80%;
+  overflow-y: scroll;
+}
+.information__wrapper {
+  height: 100%;
+  background-color: rgb(243, 243, 243);
+  flex: 3;
+  padding-top: 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+
+.presentation__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 2vw;
+}
+.presentation__wrapper h2 {
+  color: var(--primaryColor);
+}
+
+.presentation__wrapper h2,
+.schedule__wrapper h2,
+.leaderBoard__wrapper h2 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+.schedule__wrapper {
+  background-color: var(--backgroundColor);
+  padding: 4vw;
+  color: var(--white);
+  height: max-content;
+  flex: 1;
+}
+.schedule__wrapper ul {
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
+}
+
+.schedule__wrapper ul li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+.date {
+  color: var(--primaryColor);
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+.schedule__wrapper li {
+  border-bottom: 1px var(--white) solid;
+}
+
+.nav__wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  padding: 1rem;
+}
+
+table{
+  width: 100%;
+  border-spacing: 1vw;
+}
+.userRow{
+  height: 100px;
+}
+table :hover{
+  background-color: var(--primaryColor);
+  color: var(--white);
+}
+.avatar a {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.username, .score{
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+.avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+@media screen and (max-width: 800px) {
+  main {
+    flex-direction: column;
+  }
+}

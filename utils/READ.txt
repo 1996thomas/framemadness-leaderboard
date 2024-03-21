@@ -1,0 +1,15 @@
+How to start ?
+
+ADD USER RESULTS >>>
+- Move all .json files from IPFS in the folder "/public/usersResults/"
+- Just type "python3 jsonFusion.py" on your terminal
+- A file nammed "donnees_fusionnees.json" is now created with all the user data inside
+
+
+UPDATE TOURNAMENT  >>>
+- You can fill the result of the tournament with "real-bracket-generator.py"
+- Just type "python3 real-bracket-generator.py" on your terminal
+- You can "quit" as you want
+
+PUSH UPDATED TOURNAMENT >>>
+- Push on github your commit
