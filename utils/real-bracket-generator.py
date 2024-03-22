@@ -1,5 +1,3 @@
-import json
-import sys  
 
 teams_data = {
   "1": {
@@ -263,6 +261,17 @@ teams_data = {
 import json
 import sys
 
+# Supposons que teams_data soit déjà défini comme dans votre code initial
+
+class Color:
+    BLUE = '\033[94m'
+    ORANGE = '\033[93m'  # ANSI n'a pas d'orange spécifique, donc on utilise le jaune clair pour se rapprocher
+    PURPLE = '\033[95m'
+    RESET = '\033[0m'
+
+def print_colored(text, color):
+    print(color + text + Color.RESET)
+
 def save_progress(progress, file_path='tournament_progress.json'):
     with open(file_path, 'w') as file:
         json.dump(progress, file, indent=2)
@@ -275,7 +284,8 @@ def load_progress(file_path='tournament_progress.json'):
         return []
 
 def select_winner(team1, team2):
-    print(f"Match: {team1['name']} VS {team2['name']}")
+    print_colored(f"Match: {team1['name']}", Color.ORANGE)
+    print_colored(f"VS {team2['name']}", Color.PURPLE)
     while True:
         choice = input("Select winner (1 or 2), or type 'quit' to save and exit: ")
         if choice == 'quit':
@@ -289,14 +299,41 @@ def load_teams():
     """Retourne les données d'équipes."""
     return teams_data
 
+def filter_teams_for_current_round(teams, progress):
+    round_number = 1
+    while len(progress) >= 2 ** round_number:
+        winners_ids = {match['w'] for match in progress if match['m'] <= 2**round_number}
+        teams = [team for team in teams if int(list(load_teams().keys())[list(load_teams().values()).index(team)]) in winners_ids]
+        round_number += 1
+    return teams, round_number
+
+def get_round_name(number_of_teams):
+    if number_of_teams > 32:
+        return "1st Round"
+    elif number_of_teams > 16:
+        return "2nd Round"
+    elif number_of_teams > 8:
+        return "Sweet 16"
+    elif number_of_teams > 4:
+        return "Elite 8"
+    elif number_of_teams > 2:
+        return "Final Four"
+    elif number_of_teams == 2:
+        return "Finale"
+    else:
+        return "Champion"
+
 def main():
-    teams = list(load_teams().values())
+    all_teams = load_teams().values()
     progress = load_progress()
 
+    teams, current_round = filter_teams_for_current_round(list(all_teams), progress)
     current_match_id = len(progress) + 1
     new_progress = []
 
     while len(teams) > 1:
+        round_name = get_round_name(len(teams))
+        print_colored(round_name, Color.BLUE)  # Affiche le nom du round en bleu
         next_round_teams = []
         for i in range(0, len(teams), 2):
             team1 = teams[i]
