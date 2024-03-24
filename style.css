@@ -34,11 +34,14 @@ main {
   border: 1px solid rgba(236, 236, 236, 0.4);
   height: 100%;
   width: 100%;
-  display: flex;
   color: var(--white);
   width: 90%;
   height: 80%;
   overflow-y: scroll;
+}
+
+.leaderBoard__wrapper h2 {
+  font-size: clamp(2rem, 5vw, 3vw);
 }
 .information__wrapper {
   height: 100%;
@@ -60,9 +63,16 @@ main {
 }
 
 .presentation__wrapper h2,
-.schedule__wrapper h2,
-.leaderBoard__wrapper h2 {
+.schedule__wrapper h2 {
   font-size: clamp(1.2rem, 4vw, 3rem);
+}
+
+input {
+  background: none;
+  color: white;
+  padding: 1vw;
+  border: 1px solid rgba(236, 236, 236, 0.4);
+  width: 90%;
 }
 
 .schedule__wrapper {
@@ -101,47 +111,59 @@ main {
   padding: 1rem;
 }
 
-table{
+table {
   width: 100%;
-  border-spacing: 1vw;
+  border-spacing: 0;
+  padding-left: 1vw;
 }
-.userRow{
-  height: 100px;
+
+.userRow {
+  height: 120px;
 }
-table :hover{
-  background-color: var(--primaryColor);
-  color: var(--white);
-}
-.avatar a {
+
+.avatar {
   height: 100px;
   width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
 }
-.username, .score{
+.username,
+.score {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
-.avatar img{
+.avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
 }
 
+select {
+  padding: 0.5vw;
+  background: none;
+  border: 1px solid rgba(236, 236, 236, 0.4);  color: var(--white);
+  padding: 10px;
+}
 
 @media screen and (max-width: 800px) {
   main {
     flex-direction: column;
+    margin: 0 auto;
   }
-.username{
-  max-width: 200px;
-  overflow: hidden;
-  margin-left: 1rem;
 
-}
-  .avatar a {
-    height: 75px;
-    width: 75px;
+  input{
+    padding-block: 3vw;
+  }
+
+  .username {
+    max-width: 100px;
+    overflow: hidden;
+    margin-left: 1rem;
+  }
+  .avatar img {
+    height: 80px;
+    width: 80px;
   }
 }
