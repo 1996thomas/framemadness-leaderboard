@@ -1,5 +1,5 @@
 import "./style.css";
-import { teamsData } from "./public/teams.js"; // Assurez-vous que le chemin est correct
+import { teamsData } from "/teams.js"; 
 import usersChoices from "./utils/donnees_fusionnees.json";
 import matchPlayed from "./utils/tournament_progress.json";
 
@@ -224,5 +224,4 @@ function determineRound(matchId) {
   else return 1;
 }
 
-// Exécuter la mise à jour du leaderboard après avoir défini toutes les fonctions nécessaires
 updateLeaderboard(usersChoices, matchPlayed);
