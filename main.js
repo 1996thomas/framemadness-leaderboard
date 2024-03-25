@@ -1,5 +1,5 @@
 import "./style.css";
-import { teamsData } from "/teams.js"; 
+import { teamsData } from "./public/teams.js"; 
 import usersChoices from "./utils/donnees_fusionnees.json";
 import matchPlayed from "./utils/tournament_progress.json";
 
