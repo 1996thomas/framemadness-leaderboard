@@ -67,6 +67,10 @@ main {
   font-size: clamp(1.2rem, 4vw, 3rem);
 }
 
+.potential{
+  font-size: .9rem;
+}
+
 input {
   background: none;
   color: white;
