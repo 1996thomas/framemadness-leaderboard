@@ -8,8 +8,8 @@ document.querySelector("#app").innerHTML = `
 <div class="leaderBoard__wrapper">
   <div class="nav__wrapper">
     <a href=""></a>
-    <img src="./Eco.png" height="40px" alt="" />
-    <img src="./Krause_House.png" height="40px" alt="" />
+    <img src="./eco.png" height="40px" alt="Eco logo" />
+    <img src="./krausehouse.png" height="40px" alt="Krause House logo" />
   </div>
   <div id="matchWinners">
     <!-- Les vainqueurs des matchs seront affichés ici -->
