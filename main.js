@@ -1,5 +1,5 @@
 import "./style.css";
-import { teamsData } from "./public/teams.js"; 
+import { teamsData } from "./public/teams.js";
 import usersChoices from "./utils/donnees_fusionnees.json";
 import matchPlayed from "./utils/tournament_progress.json";
 
@@ -106,7 +106,7 @@ function updateLeaderboard(choixUtilisateurs, matchsJoues) {
             (user, index) => `
             <tr class="userRow" id="userRow-${index}" style="cursor: pointer;">
               <td class="avatar"><img src="${user.avatar}" alt="Avatar"></td>
-              <td class="username">${user.username}</td>
+              <td class="username"><a target="_blank" href="https://warpcast.com/${user.username}">${user.username}</a></td>
               <td class="score">${user.score}</td>
             </tr>
             <tr id="dropdown-${index}" class="dropdownContent" style="display: none;">
